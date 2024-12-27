@@ -11,10 +11,6 @@ loader = WebBaseLoader('https://aws.amazon.com/what-is/retrieval-augmented-gener
 
 data = loader.load()
 
-#print(data[0].page_content + "\n--------\n")
-#print(data[0].metadata)
-#print(data)
-
 ### Splitting ###
 splitter = RecursiveCharacterTextSplitter(
     separators=["\n\n\n\n\n\n\n\n\n\n\n\n\n", "\n\n", "       ", "\n\n\n", "\n", "", "  "],
@@ -67,10 +63,3 @@ result = chain.invoke(user_question)
 print(result)
 
 ###
-
-#chain = prompt_template | llm
-
-#print(chain.invoke({
-#    "context": context,
-#    "question": "What is the difference between Retrieval-Augmented Generation and semantic search?"
-#}))
